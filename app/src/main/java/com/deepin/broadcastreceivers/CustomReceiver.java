@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
+import static com.deepin.broadcastreceivers.MainActivity.ACTION_CUSTOM_BROADCAST;
+
 public class CustomReceiver extends BroadcastReceiver {
 
     @Override
@@ -18,6 +20,12 @@ public class CustomReceiver extends BroadcastReceiver {
                     break;
                 case Intent.ACTION_POWER_DISCONNECTED:
                     toastMessage = "Power disconnected!";
+                    break;
+                case Intent.ACTION_BATTERY_LOW:
+                    toastMessage = "Battery Low!";
+                    break;
+                case ACTION_CUSTOM_BROADCAST:
+                    toastMessage = "Custom Broadcast Received";
                     break;
             }
 
